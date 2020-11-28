@@ -9,13 +9,13 @@ public class CombainMover : MonoBehaviour {
     private static string lookingPointString = "lookingPoint";
 
     private Vector3 angularRotation;
-    private Transform lookingPoint;
+    private Transform lookingPointS;
     private Rigidbody rb;
 
     public void Start(){
         rb = GetComponent<Rigidbody>();
         angularRotation = new Vector3(0.0f, 1.0f, 0.0f);
-        lookingPoint = transform.Find(lookingPoint);
+        lookingPoint = transform.Find(lookingPointString);
     }
 
     private void Translate(){
