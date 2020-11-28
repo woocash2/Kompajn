@@ -241,11 +241,19 @@ namespace Mirror
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
+
+        public Transform center, start1, start2, start3, start4;
+
         /// <summary>
         /// virtual so that inheriting classes' Start() can call base.Start() too
         /// </summary>
         public virtual void Start()
         {
+
+            RegisterStartPosition(start1);
+            RegisterStartPosition(start2);
+            RegisterStartPosition(start3);
+            RegisterStartPosition(start4);
             // headless mode? then start the server
             // can't do this in Awake because Awake is for initialization.
             // some transports might not be ready until Start.
