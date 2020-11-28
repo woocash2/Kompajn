@@ -3,35 +3,41 @@ using UnityEngine;
 public class CombainMover : MonoBehaviour {
     public float translationSpeed;
     public float angularSpeed;
-    public GameObject lookingPoint;
+    private GameObject lookingPoint;
 
     private static string vertical = "Vertical";
     private static string horizontal = "Horizontal";
 
+
+    private Vector3 angularRotation;
+
     private Rigidbody rb;
-
-    private bool IsMoving(){
-        return !Mathf.Approximately(0.0f, Input.GetAxis(vertical));
-    }
-
-    private bool IsRotating(){
-        return Mathf.Approximately(0.0f, Input.GetAxis(horizontal));
-    }
-
-    private void Translate(){
-        if(IsMoving()){
-           rb.velocity = (transform.position - lookingPoint.transform.position).normalized;
-        }
-        else{
-           rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
-        }
-    }
 
     public void Start(){
         rb = GetComponent<Rigidbody>();
+        angularRotation = new Vector3(0.0f, 1.0f, 0.0f);
+        Transform lookingPointTrans = transform.Find("lookingPoint");
+        
+        if (lookingPointTrans != null){
+            lookingPoint = lookingPointTrans.gameObject;
+        } else{
+            print("fuck");
+        }
+    }
+
+    private void Translate(){
+        Vector3 movement = (transform.position - lookingPoint.transform.position).normalized * angularSpeed;
+        movement.y = 0.0f;
+        rb.velocity = Input.GetAxis(vertical) *  movement;
+    }
+
+    private void Rotate(){
+        Quaternion  deltaRotation = Quaternion.Euler(angularRotation * Input.GetAxis(horizontal) * translationSpeed);
+        rb.MoveRotation(rb.rotation * deltaRotation);
     }
 
     public void Update(){
+        Rotate();
         Translate();
     }
 }
