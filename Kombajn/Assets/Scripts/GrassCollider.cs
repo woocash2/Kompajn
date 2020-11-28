@@ -13,6 +13,7 @@ public class GrassCollider : MonoBehaviour {
     public void OnTriggerEnter(Collider coll){
         if(coll.gameObject.tag == grassTag){
             score += 1;
+            coll.gameObject.SetActive(false);
         }
     }
 }
