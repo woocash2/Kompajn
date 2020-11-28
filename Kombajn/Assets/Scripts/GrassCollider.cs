@@ -10,7 +10,7 @@ public class GrassCollider : MonoBehaviour {
         score = 0;
     }
 
-    public void OnCollisionEnter(Collider coll){
+    public void OnTriggerEnter(Collider coll){
         if(coll.gameObject.tag == grassTag){
             score += 1;
         }
