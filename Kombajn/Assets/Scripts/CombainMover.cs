@@ -11,19 +11,19 @@ public class CombainMover : MonoBehaviour {
     private Rigidbody rb;
 
     private bool IsMoving(){
-        return !Mathf.Approximately(0.0f, Input.GetAxis(horizontal));
+        return !Mathf.Approximately(0.0f, Input.GetAxis(vertical));
     }
 
     private bool IsRotating(){
-        return Mathf.Approximately(0.0f, Input.GetAxis(vertical));
+        return Mathf.Approximately(0.0f, Input.GetAxis(horizontal));
     }
 
     private void Translate(){
         if(IsMoving()){
-           rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+           rb.velocity = (transform.position - lookingPoint.transform.position).normalized;
         }
         else{
-            rb.velocity = (transform.position - lookingPoint.transform.position).normalized;
+           rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
         }
     }
 
