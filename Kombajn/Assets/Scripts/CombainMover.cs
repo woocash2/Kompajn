@@ -15,17 +15,17 @@ public class CombainMover : MonoBehaviour {
     public void Start(){
         rb = GetComponent<Rigidbody>();
         angularRotation = new Vector3(0.0f, 1.0f, 0.0f);
-        lookingPoint = transform.Find(lookingPoint);
+        lookingPoint = transform.Find(lookingPointString);
     }
 
     private void Translate(){
-        Vector3 movement = (transform.position - lookingPoint.position).normalized * angularSpeed;
+        Vector3 movement = (transform.position - lookingPoint.position).normalized * translationSpeed;
         movement.y = 0.0f;
         rb.velocity = Input.GetAxis(vertical) *  movement;
     }
 
     private void Rotate(){
-        Quaternion  deltaRotation = Quaternion.Euler(angularRotation * Input.GetAxis(horizontal) * translationSpeed);
+        Quaternion  deltaRotation = Quaternion.Euler(angularRotation * Input.GetAxis(horizontal) * angularSpeed);
         rb.MoveRotation(rb.rotation * deltaRotation);
     }
 
