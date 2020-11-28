@@ -6,7 +6,7 @@ public class CombainMover : MonoBehaviour {
     
     private static string vertical = "Vertical";
     private static string horizontal = "Horizontal";
-    private static string lookingPoint = "lookingPoint";
+    private static string lookingPointString = "lookingPoint";
 
     private Vector3 angularRotation;
     private Transform lookingPoint;
