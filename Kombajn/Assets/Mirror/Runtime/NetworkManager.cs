@@ -440,6 +440,7 @@ namespace Mirror
             if (logger.LogEnabled()) logger.Log("NetworkManager StartClient address:" + uri);
             networkAddress = uri.Host;
 
+            Debug.Log(uri);
             NetworkClient.Connect(uri);
 
             OnStartClient();

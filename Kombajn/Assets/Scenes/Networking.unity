@@ -388,7 +388,7 @@ MonoBehaviour:
   offlineScene: 
   onlineScene: 
   transport: {fileID: 1583809698}
-  networkAddress: localhost
+  networkAddress: 25.1.97.127
   maxConnections: 4
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
@@ -399,6 +399,11 @@ MonoBehaviour:
   playerSpawnMethod: 1
   spawnPrefabs:
   - {fileID: 0}
+  center: {fileID: 0}
+  start1: {fileID: 870651405}
+  start2: {fileID: 1992978437}
+  start3: {fileID: 121878849}
+  start4: {fileID: 1832961363}
 --- !u!4 &1583809700
 Transform:
   m_ObjectHideFlags: 0
