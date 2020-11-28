@@ -9,7 +9,7 @@ public class CombainMover : MonoBehaviour {
     private static string lookingPointString = "lookingPoint";
 
     private Vector3 angularRotation;
-    private Transform lookingPointS;
+    private Transform lookingPoint;
     private Rigidbody rb;
 
     public void Start(){
