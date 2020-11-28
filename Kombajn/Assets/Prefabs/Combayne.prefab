@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b6de1f6aa589c274b8b52f11f85b605e, type: 2}
+  - {fileID: 2100000, guid: 6b6d4636fbbe37a429f23a0904866837, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -339,7 +339,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b6de1f6aa589c274b8b52f11f85b605e, type: 2}
+  - {fileID: 2100000, guid: 6b6d4636fbbe37a429f23a0904866837, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -477,6 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 333499026123447245}
   - component: {fileID: -1155056004978538256}
+  - component: {fileID: 2011000843739791892}
   m_Layer: 0
   m_Name: Combayne
   m_TagString: Untagged
@@ -516,6 +517,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2011000843739791892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333499026123447244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b861d7786357f4547a510d277d04b746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationSpeed: 4
+  angularSpeed: 10
 --- !u!1 &333499026468657640
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +642,7 @@ GameObject:
   - component: {fileID: 333499026480289670}
   - component: {fileID: 333499026480289665}
   - component: {fileID: 333499026480289664}
+  - component: {fileID: 7364914416954049955}
   m_Layer: 0
   m_Name: kosa
   m_TagString: Untagged
@@ -674,7 +690,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b7cb8f5cd9a94b4e96ade6301be8b31, type: 2}
+  - {fileID: 2100000, guid: 0e53ae205fbc9784a89a881c2f572b3d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -703,12 +719,26 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333499026480289666}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &7364914416954049955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333499026480289666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de32406a7e6cde4aa0c9e64470be5f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  perGrassScore: 0
 --- !u!1 &1965259890533975996
 GameObject:
   m_ObjectHideFlags: 0
