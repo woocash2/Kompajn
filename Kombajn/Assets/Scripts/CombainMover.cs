@@ -20,6 +20,7 @@ public class CombainMover : MonoBehaviour {
 
     private void Translate(){
         Vector3 movement = (transform.position - lookingPoint.position).normalized * translationSpeed;
+        movement.y = 0f;
         rb.velocity = Input.GetAxis(vertical) *  movement;
     }
 
