@@ -14,7 +14,6 @@ public class GenerateScene : MonoBehaviour
 
     public int sizeX;
     public int sizeZ;
-<<<<<<< HEAD
 
     void generateFencesAroundPlane(GameObject fencePrefab, Vector3 leftBackCorner, float lenX, float lenZ){
         float fenceLen = 4.4f; // how to read it from the object?
@@ -37,29 +36,14 @@ public class GenerateScene : MonoBehaviour
 
     void generateWheatInsidePlane(GameObject wheatPrefab, Vector3 leftBackCorner, float lenX, float lenZ, int count){
         for(int i=0;i<count;i++){
-            Vector3 position = leftBackCorner + new Vector3(Random.Range(0f, lenX), 0f, Random.Range(0f, lenZ));
+            Vector3 position = leftBackCorner + new Vector3(UnityEngine.Random.Range(0f, lenX), 0f, UnityEngine.Random.Range(0f, lenZ));
             wheat = Instantiate(wheatPrefab, position, Quaternion.identity);
         }
-=======
-    public int grassCount;
-
-    private void fillSquare(int x, int z, int len, int count){
-        System.Random random = new System.Random();
-
-        for(int i = 0; i<count; i++){
-            int posX = random.Next(x, x + len);
-            int posZ = random.Next(z, z + len);
-
-            Instantiate(wheat, new Vector3(posX, 0.0f, posZ), Quaternion.identity);
-        }
-
->>>>>>> 5191da7e389e99d61c902ca02ef603fdbdc88ac3
     }
 
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
         // generate plane with corners in (0, 0, 0) and (sizeX, 0, sizeZ)
         terrain = Instantiate(terrain, new Vector3(sizeX/2.0f, 0, sizeZ/2.0f), Quaternion.identity);
         terrain.transform.localScale = new Vector3(sizeX*0.1f, 0.1f, sizeZ*0.1f); 
@@ -69,10 +53,6 @@ public class GenerateScene : MonoBehaviour
         generateWheatInsidePlane(wheat, Vector3.zero, sizeX, sizeZ, 100);
 
         player = Instantiate(player, new Vector3(3.0f, 0f, 3.0f), Quaternion.identity);
-=======
-        Instantiate(terrain, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
-        fillSquare(0, 0, sizeX, grassCount);
->>>>>>> 5191da7e389e99d61c902ca02ef603fdbdc88ac3
     }
 
     // Update is called once per frame
