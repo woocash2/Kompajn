@@ -11,15 +11,15 @@ public class CombainMover : MonoBehaviour {
     private Rigidbody rb;
 
     private bool IsMoving(){
-        return Mathf.Approximately(0.0f, Input.GetAxis(vertical));
+        return !Mathf.Approximately(0.0f, Input.GetAxis(horizontal));
     }
 
     private bool IsRotating(){
-        return Mathf.Approximately(0.0f, Input.GetAxis(horizontal));
+        return Mathf.Approximately(0.0f, Input.GetAxis(vertical));
     }
 
     private void Translate(){
-        if(!IsMoving()){
+        if(IsMoving()){
            rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
         }
         else{
