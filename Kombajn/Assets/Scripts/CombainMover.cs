@@ -3,30 +3,23 @@ using UnityEngine;
 public class CombainMover : MonoBehaviour {
     public float translationSpeed;
     public float angularSpeed;
-    private GameObject lookingPoint;
-
+    
     private static string vertical = "Vertical";
     private static string horizontal = "Horizontal";
-
+    private static string lookingPoint = "lookingPoint";
 
     private Vector3 angularRotation;
-
+    private Transform lookingPoint;
     private Rigidbody rb;
 
     public void Start(){
         rb = GetComponent<Rigidbody>();
         angularRotation = new Vector3(0.0f, 1.0f, 0.0f);
-        Transform lookingPointTrans = transform.Find("lookingPoint");
-        
-        if (lookingPointTrans != null){
-            lookingPoint = lookingPointTrans.gameObject;
-        } else{
-            print("fuck");
-        }
+        lookingPoint = transform.Find(lookingPoint);
     }
 
     private void Translate(){
-        Vector3 movement = (transform.position - lookingPoint.transform.position).normalized * angularSpeed;
+        Vector3 movement = (transform.position - lookingPoint.position).normalized * angularSpeed;
         movement.y = 0.0f;
         rb.velocity = Input.GetAxis(vertical) *  movement;
     }
