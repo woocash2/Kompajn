@@ -9,7 +9,7 @@ public class CombainMover : MonoBehaviour {
     private static string lookingPointString = "lookingPoint";
 
     private Vector3 angularRotation;
-    private Transform lookingPointS;
+    private Transform lookingPoint;
     private Rigidbody rb;
 
     public void Start(){
@@ -19,13 +19,13 @@ public class CombainMover : MonoBehaviour {
     }
 
     private void Translate(){
-        Vector3 movement = (transform.position - lookingPoint.position).normalized * angularSpeed;
+        Vector3 movement = (transform.position - lookingPoint.position).normalized * translationSpeed;
         movement.y = 0.0f;
         rb.velocity = Input.GetAxis(vertical) *  movement;
     }
 
     private void Rotate(){
-        Quaternion  deltaRotation = Quaternion.Euler(angularRotation * Input.GetAxis(horizontal) * translationSpeed);
+        Quaternion  deltaRotation = Quaternion.Euler(angularRotation * Input.GetAxis(horizontal) * angularSpeed);
         rb.MoveRotation(rb.rotation * deltaRotation);
     }
 
