@@ -157,8 +157,9 @@ MonoBehaviour:
   steelFence: {fileID: 5218508997698469140, guid: 1618068a47affed45abbead75f265b29,
     type: 3}
   player: {fileID: 3575922093089209470, guid: 1a5ff5638e2fa6a48b2e873290bae4e9, type: 3}
-  sizeX: 100
-  sizeZ: 100
+  wheatCount: 1000
+  sizeX: 80
+  sizeZ: 80
 --- !u!4 &63339026
 Transform:
   m_ObjectHideFlags: 0
